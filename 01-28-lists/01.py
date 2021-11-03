@@ -34,7 +34,7 @@ def flatten_list(listx: list) -> list:
 
 #08
 def del_consecutive(listx: list) -> list:
-	aux: List[int] = []
+	aux = []
 	for index,value in enumerate(listx):
 		if index == 0 or value != listx[index-1]:
 			aux.append(value)
@@ -43,8 +43,8 @@ def del_consecutive(listx: list) -> list:
 
 #09
 def pack_consecutive(listx: list) -> list:
-	temp: List[int] = []
-	aux: List[int] = []
+	temp = []
+	aux = []
 
 	for index,value in enumerate(listx):
 		if index == 0 and value == listx[index+1]:
