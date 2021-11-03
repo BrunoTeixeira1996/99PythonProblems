@@ -1,4 +1,3 @@
-# README
 
 - 99 lisp problems but in python
 
