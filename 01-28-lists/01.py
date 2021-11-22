@@ -166,9 +166,9 @@ def slice_list(listx: list, i_elem: int, k_elem:int) -> list:
 
 #20
 def remove_kelem_from_list(listx: list, k_elem: int) -> list:
-	 #[value for item,value in enumerate(listx) if item + 1 != k_elem]
+	#[value for item,value in enumerate(listx) if item + 1 != k_elem]
 	
-    #listx[:k_elem - 1] + listx[k_elem:] 
+	#listx[:k_elem - 1] + listx[k_elem:] 
 
 	del listx[k_elem - 1]
 	return listx
