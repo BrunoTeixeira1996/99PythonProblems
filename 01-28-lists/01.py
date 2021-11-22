@@ -113,6 +113,66 @@ def modified_run_lenght_encoding_data(listx: list) -> list[tuple]:
 	
 	return aux
 
+#12
+def decode_run_length_enconded_list(listx: list) -> list:
+	aux = []
+	temp = 0
+	for i in listx:
+		temp = i[0]
+		while temp > 0:
+			aux.append(i[1])
+			temp -= 1
+
+	return aux
+
+
+#14
+def dup_elem_of_list(listx: list) -> list:
+	aux = []
+	for i in listx:
+		aux.append(i)
+		aux.append(i)
+
+	return aux
+
+#15
+def replicate_elem_of_list_n_times(listx: list, n_times: int) -> list:
+	return [element for element in listx for _ in range(n_times)]
+
+#16
+def drop_elem_of_list(listx: list, n_elem: int) -> list:
+	temp = 0
+	aux = []
+	for i in listx:
+		if temp == (n_elem - 1):
+			temp = 0
+		else:
+			aux.append(i)
+			temp += 1
+
+	return aux
+
+#17
+def split_list(listx: list, n_part: int) -> list:
+    return [listx[:n_part], listx[n_part:]]
+
+#18
+def slice_list(listx: list, i_elem: int, k_elem:int) -> list:
+	return [listx[i_elem-1:k_elem]]
+
+
+#19 TODO
+
+
+#20
+def remove_kelem_from_list(listx: list, k_elem: int) -> list:
+	 #[value for item,value in enumerate(listx) if item + 1 != k_elem]
+	
+    #listx[:k_elem - 1] + listx[k_elem:] 
+
+	del listx[k_elem - 1]
+	return listx
+	
 
 if __name__ == '__main__':
 	# list1 = ['a','b','c','d']
@@ -149,5 +209,26 @@ if __name__ == '__main__':
 	# print(run_lenght_encoding_data(list10))
 
 
-	list11 = ['a','a','a','a','b','c','c','a','a','d','e','e','e','e']
-	print(modified_run_lenght_encoding_data(list11))
+	# list11 = ['a','a','a','a','b','c','c','a','a','d','e','e','e','e']
+	# print(modified_run_lenght_encoding_data(list11))
+
+	# list12 = [[4,'a'],[1,'b'],[2,'c'],[2,'a'],[1,'d'],[4,'e']]
+	# print(decode_run_length_enconded_list(list12))
+
+	# list14 = ['a','b','c','d','e']
+	# print(dup_elem_of_list(list14,2))
+
+	# list15 = ['a','b','c','d','e']
+	# print(replicate_elem_of_list_n_times(list15,3))
+
+	# list16 = ['a','b','c','d','e','f','g','h','i','k']
+	# print(drop_elem_of_list(list16,3))
+
+	# list17 = ['a','b','c','d','e','f','g','h','i','k']
+	# print(split_list(list17,2))
+
+	# list18 = ['a','b','c','d','e','f','g','h','i','k']
+	# print(slice_list(list18,3,7))
+
+	list20 = ['a','b','c','d']
+	print(remove_kelem_from_list(list20,2))
